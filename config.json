@@ -1,0 +1,32 @@
+{
+  "port": "4000",
+  "units":
+  [
+    {
+      "name": "3000",
+      "cmd": "",
+      "binary": false,
+      "pattern": "7777(.*?)6b67",
+      "options": {
+        "PortName": "COM5",
+        "BaudRate": 9600,
+        "DataBits": 8,
+        "StopBits": 1,
+        "ParityMode": 0
+      }
+     },
+    {
+      "name": "600",
+      "cmd": "4A",
+      "binaryResponse": true,
+      "pattern": "",
+      "options": {
+        "PortName": "COM6",
+        "BaudRate": 4800,
+        "DataBits": 8,
+        "StopBits": 1,
+        "ParityMode": 0
+      }
+    }
+  ]
+}
