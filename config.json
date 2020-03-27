@@ -5,8 +5,7 @@
     {
       "name": "3000",
       "cmd": "",
-      "binary": false,
-      "pattern": "7777(.*?)6b67",
+      "type": "scale3000",
       "options": {
         "PortName": "COM5",
         "BaudRate": 9600,
@@ -18,8 +17,7 @@
     {
       "name": "600",
       "cmd": "4A",
-      "binaryResponse": true,
-      "pattern": "",
+      "type": "scale600",
       "options": {
         "PortName": "COM6",
         "BaudRate": 4800,

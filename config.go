@@ -11,7 +11,7 @@ type ScaleUnit struct {
 	Name string
 	Cmd string
 	Pattern string
-	BinaryResponse bool
+	Type string
 	Options serial.OpenOptions
 }
 

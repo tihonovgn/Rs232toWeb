@@ -1,25 +1,27 @@
 package main
 
 import (
+	"bufio"
 	"encoding/hex"
 	"errors"
+	"io"
 	"log"
 	"regexp"
-	"strings"
 )
 
-func getUnitFromPath(path string, units []ScaleUnit ) (string, error) {
-	unitName := strings.Trim(path, "/")
-	found := false
-	for _ , unit := range units {
-		if unit.Name == unitName {
-			found = true
-		}
+type Scale3000 struct {
+}
+
+func (rs Scale3000) SendCmd(port io.ReadWriteCloser, cmd string) {
+}
+
+func (rs Scale3000) ReadWeight(port io.ReadWriteCloser) (string, error) {
+	reader := bufio.NewReader(port)
+	buf, _, err := reader.ReadLine()
+	if err != nil || len(buf) == 0 {
+		return "", errors.New("Errort null weight")
 	}
-	if ! found {
-		return "", errors.New("Unit not found " + unitName)
-	}
-	return unitName, nil
+	return parseWeight(buf, "7777(.*?)6b67"), nil
 }
 
 func parseWeight(buf []byte, pattern string) string {
