@@ -7,7 +7,7 @@
       "cmd": "",
       "type": "scale3000",
       "options": {
-        "PortName": "COM5",
+        "PortName": "COM3",
         "BaudRate": 9600,
         "DataBits": 8,
         "StopBits": 1,
@@ -21,6 +21,18 @@
       "options": {
         "PortName": "COM6",
         "BaudRate": 4800,
+        "DataBits": 8,
+        "StopBits": 1,
+        "ParityMode": 0
+      }
+    },
+    {
+      "name": "3001",
+      "cmd": "",
+      "type": "scale3001",
+      "options": {
+        "PortName": "COM5",
+        "BaudRate": 9600,
         "DataBits": 8,
         "StopBits": 1,
         "ParityMode": 0

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"log"
 )
@@ -16,6 +17,9 @@ func createDevice(unitType string) Device{
 		return Scale600{}
 	case "scale3000":
 		return Scale3000{}
+	case "scale3001":
+		fmt.Println("Device Scale3001")
+		return Scale3001{}
 	default:
 		log.Fatalln("Device type error")
 		return nil

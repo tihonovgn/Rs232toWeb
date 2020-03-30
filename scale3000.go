@@ -19,12 +19,12 @@ func (rs Scale3000) ReadWeight(port io.ReadWriteCloser) (string, error) {
 	reader := bufio.NewReader(port)
 	buf, _, err := reader.ReadLine()
 	if err != nil || len(buf) == 0 {
-		return "", errors.New("Errort null weight")
+		return "", errors.New("Error null weight")
 	}
-	return parseWeight(buf, "7777(.*?)6b67"), nil
+	return rs.parseWeight(buf, "7777(.*?)6b67"), nil
 }
 
-func parseWeight(buf []byte, pattern string) string {
+func (rs Scale3000) parseWeight(buf []byte, pattern string) string {
 	str := hex.EncodeToString(buf)
 	re := regexp.MustCompile(pattern)
 	found := re.FindStringSubmatch(str)
